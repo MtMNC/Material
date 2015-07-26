@@ -1,7 +1,7 @@
 {
-	'@metadata': {
-		'authors': [ 'Codyn329' ]
+	"@metadata": {
+		"authors": [ "Codyn329" ]
 	},
-	'skinname-material': 'Material',
-	'material-desc": 'A mediawiki skin based on Google's Material Design language',
+	'skinname-material": "Material",
+	"material-desc": "A mediawiki skin based on Google's Material Design language"
 }
