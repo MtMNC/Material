@@ -29,9 +29,15 @@ class SkinMaterial extends SkinTemplate {
 class FooBarTemplate extends BaseTemplate {
         public function execute() {
 		$this->html( 'headelement' );
+		<header>
+			
+		</header>
 		<div class="mw-body-content">
 		        <?php $this->html( 'bodytext' ) ?>
 		</div>
+		<footer>
+			
+		</footer>
 		<?php
 		$this->printTrail();
 		echo Html::closeElement( 'body' );
