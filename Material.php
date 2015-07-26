@@ -20,7 +20,7 @@
         'version' => '1.0',
         'author' => '[https://meta.brickimedia.org/wiki/User:Codyn329 Codyn329]',
         'descriptionmsg' => 'material-desc',
-        'license' => 'GPL-2.0+',
+        'license' => 'GPL-3.0',
  );
  
  $wgValidSkinNames['material'] = 'Material';
@@ -30,6 +30,6 @@
  $wgResourceModules['skins.material'] = array(
         'styles' => array(
                 'skins/Material/material/main.css' => array( 'media' => 'screen' ),
-                'skins/Material/material/print.css' => array ('media' => 'print' ),
+                'skins/Material/material/print.css' => array( 'media' => 'print' ),
         ),
  );
