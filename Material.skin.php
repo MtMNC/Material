@@ -29,6 +29,7 @@ class SkinMaterial extends SkinTemplate {
 class FooBarTemplate extends BaseTemplate {
         public function execute() {
 		$this->html( 'headelement' );
+		?>
 		<header>
 			
 		</header>
