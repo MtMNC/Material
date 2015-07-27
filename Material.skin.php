@@ -26,7 +26,7 @@ class SkinMaterial extends SkinTemplate {
  }
  
 // BaseTemplate class
-class FooBarTemplate extends BaseTemplate {
+class MaterialTemplate extends BaseTemplate {
         public function execute() {
 		$this->html( 'headelement' );
 		?>
