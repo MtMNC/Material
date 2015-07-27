@@ -20,7 +20,7 @@ class SkinMaterial extends SkinTemplate {
         function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
 		$out->addModuleStyles( array(
-			'mediawiki.skinning.interface', 'skins.foobar'
+			'mediawiki.skinning.interface', 'skins.material'
 		) );
 	}
  }
