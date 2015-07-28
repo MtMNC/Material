@@ -10,3 +10,4 @@ As its continuously being developed, we keep in mind seven important factors lis
 - **Performance**
 - **Security**
 - **Navigation**
+- **Internationalization** (i18n)
