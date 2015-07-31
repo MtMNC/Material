@@ -37,7 +37,17 @@ class MaterialTemplate extends BaseTemplate {
 		        <?php $this->html( 'bodytext' ) ?>
 		</div>
 		<footer>
-			
+			<?php
+				foreach ( $this->getFooterLinks() as $category => $links ) { ?>
+				<ul>
+				<?php
+					foreach ( $links as $key ) { ?>
+					<li><?php $this->html( $key ) ?></li>
+				<?php
+				} ?>
+				</ul>
+			<?php
+			} ?>
 		</footer>
 		<?php
 		$this->printTrail();
