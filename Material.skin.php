@@ -30,13 +30,13 @@ class MaterialTemplate extends BaseTemplate {
         public function execute() {
 		$this->html( 'headelement' );
 		?>
-		<header>
+		<header id="mw-header">
 			
 		</header>
 		<div class="mw-body-content">
 		        <?php $this->html( 'bodytext' ) ?>
 		</div>
-		<footer>
+		<footer id="mw-footer">
 			<?php
 				foreach ( $this->getFooterLinks() as $category => $links ) { ?>
 				<ul>
