@@ -10,7 +10,7 @@
  */
  
  if( !defined('MEDIAWIKI') ) {
-        //return error message
+        die('This skin requires installing MediaWiki. See https://www.mediawiki.org/wiki/Manual:Installation_guide for more information.');
  }
  
  //Skin credits for Special:Version
@@ -28,6 +28,7 @@
  $wgMessageDirs['skinMaterial'] = __DIR__ . '/i18n';
  
  $wgResourceModules['skins.material'] = array(
+        'scripts' => 'skins/Material/material/main.js',
         'styles' => array(
                 'skins/Material/material/main.css' => array( 'media' => 'screen' ),
                 'skins/Material/material/print.css' => array( 'media' => 'print' ),
