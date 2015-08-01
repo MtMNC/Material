@@ -12,10 +12,11 @@ class SkinMaterial extends SkinTemplate {
                 $stylename = 'Material',
                 $template = 'MaterialTemplate', 
                 $useHeadElement = true;
-        
         //Add JS via ResourceLoader
-        
-        
+        public function initPage( OutputPage $out ) {
+		parent::initPage( $out );
+		$out->addModules( 'skins.material.js' );
+	}
         //Add CSS via ResourceLoader
         function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
@@ -31,7 +32,13 @@ class MaterialTemplate extends BaseTemplate {
 		$this->html( 'headelement' );
 		?>
 		<header id="mw-header">
-			
+			<form class="mw-search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>">
+				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
+				<?php
+				echo $this->makeSearchInput( array( 'class' => 'mw-search-input' ) ); 
+				echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
+				?>
+			</form>
 		</header>
 		<div class="mw-body-content">
 		        <?php $this->html( 'bodytext' ) ?>
