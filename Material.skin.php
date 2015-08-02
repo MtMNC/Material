@@ -39,7 +39,6 @@ class MaterialTemplate extends BaseTemplate {
 				echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
 				?>
 			</form>
-			<
 		</header>
 		<div class="mw-body-content">
 		        <?php $this->html( 'bodytext' ) ?> <!-- content -->
