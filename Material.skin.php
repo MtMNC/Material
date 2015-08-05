@@ -52,7 +52,7 @@ class MaterialTemplate extends BaseTemplate {
 				</div>
 			<?php } ?>
 			<?php if ( $this->data['title'] != '' ) { ?> <!-- title section -->
-				<section class="title-section">
+				<section id="title-section">
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
 					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
 				</section>
