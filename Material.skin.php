@@ -41,6 +41,22 @@ class MaterialTemplate extends BaseTemplate {
 			</form>
 		</header>
 		<div class="mw-body-content">
+			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice-->
+				<div id="site-notice">
+					<?php $this->html( 'sitenotice' ); ?>
+				</div>
+			<?php } ?>
+			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk-->
+				<div class="new-talk"> 
+					<?php $this->html( 'newtalk' );?>
+				</div>
+			<?php } ?>
+			<?php if ( $this->data['title'] != '' ) { ?> <!-- title section -->
+				<section class="title-section">
+					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
+					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
+				</section>
+			<?php } ?>
 		        <?php $this->html( 'bodytext' ) ?> <!-- content -->
 		        <?php $this->html( 'catlinks' ); ?> <!-- categories -->
 		        <?php $this->html( 'dataAfterContent' ); ?> <!-- dataAfterContent -->
