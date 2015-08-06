@@ -56,13 +56,18 @@ class MaterialTemplate extends BaseTemplate {
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
 					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
 					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> <!-- subtitles -->
-						<div id="content-sub"><?php $this->html( 'subtitle' ); ?><?php $this->html( 'undelete' ); ?></div>
+						<div id="content-sub">
+							<?php $this->html( 'subtitle' ); $this->html( 'undelete' ); ?>
+						</div>
 					<?php } ?>
 				</section>
 			<?php } ?>
 		        <?php $this->html( 'bodytext' ) ?> <!-- content -->
-		        <?php $this->html( 'catlinks' ); ?> <!-- categories -->
-		        <?php $this->html( 'dataAfterContent' ); ?> <!-- dataAfterContent -->
+		        <?php 
+		        $this->html( 'catlinks' );  // categories 
+		        if ( $this->data['dataAfterContent'] ) { // dataAfterContent
+		        	$this->html( 'dataAfterContent' );  
+		        } ?>
 		</div>
 		<footer id="mw-footer"> <!-- footer -->
 			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
