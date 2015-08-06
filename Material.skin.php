@@ -65,7 +65,9 @@ class MaterialTemplate extends BaseTemplate {
 					<?php //page status indicators
 						$oldVersion = version_compare( $wgVersion, '1.25', '<=' );
 						if ( $oldVersion ) {
-							echo $this->getIndicators(); 
+							if ( method_exists( $this, 'getIndicators') {
+								echo $this->getIndicators(); 
+							}
 						} 
 					?>
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
