@@ -53,6 +53,12 @@ class MaterialTemplate extends BaseTemplate {
 			<?php } ?>
 			<?php if ( $this->data['title'] != '' ) { ?> <!-- title section -->
 				<section id="title-section">
+					<?php //page status indicators
+						$oldVersion = version_compare( $wgVersion, '1.25', '<=' );
+						if ( $oldVersion ) {
+							echo $this->getIndicators(); 
+						} 
+					?>
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
 					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
 					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> <!-- subtitles -->
