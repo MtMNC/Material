@@ -55,6 +55,9 @@ class MaterialTemplate extends BaseTemplate {
 				<section id="title-section">
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
 					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
+					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> <!-- subtitles -->
+						<div id="content-sub"><?php $this->html( 'subtitle' ); ?><?php $this->html( 'undelete' ); ?></div>
+					<?php } ?>
 				</section>
 			<?php } ?>
 		        <?php $this->html( 'bodytext' ) ?> <!-- content -->
