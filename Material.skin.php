@@ -65,17 +65,13 @@ class MaterialTemplate extends BaseTemplate {
 		        <?php $this->html( 'dataAfterContent' ); ?> <!-- dataAfterContent -->
 		</div>
 		<footer id="mw-footer"> <!-- footer -->
-			<?php
-				foreach ( $this->getFooterLinks() as $category => $links ) { ?>
+			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
 				<ul>
-				<?php
-					foreach ( $links as $key ) { ?>
+				<?php foreach ( $links as $key ) { ?>
 					<li><?php $this->html( $key ) ?></li>
-				<?php
-				} ?>
+				<?php } ?>
 				</ul>
-			<?php
-			} ?>
+			<?php } ?>
 		</footer>
 		<?php
 		$this->printTrail();
