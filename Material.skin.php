@@ -35,10 +35,19 @@ class MaterialTemplate extends BaseTemplate {
 			<form class="mw-search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
-				echo $this->makeSearchInput( array( 'class' => 'mw-search-input' ) ); 
-				echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
+					echo $this->makeSearchInput( array( 'class' => 'mw-search-input' ) ); 
+					echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
 				?>
 			</form>
+			<?php // language links
+				if ( $this->data['language_urls'] ) {
+					echo "<ul>";
+					foreach ( $this->data['language_urls'] as $key => $langLink ) {
+						echo $this->makeListItem( $key, $langLink );
+					}
+					echo "</ul>";
+				} 
+			?>
 		</header>
 		<div class="mw-body-content">
 			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice-->
@@ -70,10 +79,11 @@ class MaterialTemplate extends BaseTemplate {
 			<?php } ?>
 		        <?php $this->html( 'bodytext' ) ?> <!-- content -->
 		        <?php 
-		        $this->html( 'catlinks' );  // categories 
-		        if ( $this->data['dataAfterContent'] ) { // dataAfterContent
-		        	$this->html( 'dataAfterContent' );  
-		        } ?>
+				$this->html( 'catlinks' );  // categories 
+				if ( $this->data['dataAfterContent'] ) { // dataAfterContent
+					$this->html( 'dataAfterContent' );  
+				}
+			?>
 		</div>
 		<footer id="mw-footer"> <!-- footer -->
 			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
