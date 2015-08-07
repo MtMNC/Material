@@ -37,6 +37,9 @@ class MaterialTemplate extends BaseTemplate {
 		$this->html( 'headelement' );
 		?>
 		<header id="mw-header"> <!-- header -->
+			<nav id="nav-menu">
+				
+			</nav>
 			<form class="mw-search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
@@ -53,14 +56,24 @@ class MaterialTemplate extends BaseTemplate {
 					echo '</ul>';
 				}
 			?>
+			<nav id="nav-user"> <!-- user navigation with personal tools -->
+				<span class="username"><?php echo $this->getName() ?></span>
+				<ul>
+					<?php
+						foreach ( $this->getPersonalTools() as $key => $item ) {
+							echo $this->makeListItem( $key, $item );
+						}
+					?>
+				</ul>
+			</nav>
 		</header>
 		<div class="mw-body-content">
-			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice-->
+			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice -->
 				<div id="site-notice">
 					<?php $this->html( 'sitenotice' ); ?>
 				</div>
 			<?php } ?>
-			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk-->
+			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk -->
 				<div class="new-talk">
 					<?php $this->html( 'newtalk' ); ?>
 				</div>
