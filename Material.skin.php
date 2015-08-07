@@ -37,10 +37,10 @@ class MaterialTemplate extends BaseTemplate {
 		$this->html( 'headelement' );
 		?>
 		<header id="mw-header"> <!-- header -->
-			<nav id="nav-menu">
+			<nav id="nav-menu" role="navigation">
 				
 			</nav>
-			<form class="mw-search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
+			<form class="mw-search" id="searchform" role="search" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
 					echo $this->makeSearchInput( array( 'class' => 'mw-search-input' ) );
@@ -56,7 +56,7 @@ class MaterialTemplate extends BaseTemplate {
 					echo '</ul>';
 				}
 			?>
-			<nav id="nav-user"> <!-- user navigation with personal tools -->
+			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
 				<span class="username"><?php echo $this->getName() ?></span>
 				<ul>
 					<?php
@@ -69,12 +69,12 @@ class MaterialTemplate extends BaseTemplate {
 		</header>
 		<div class="mw-body-content">
 			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice -->
-				<div id="site-notice">
+				<div id="site-notice" role="banner">
 					<?php $this->html( 'sitenotice' ); ?>
 				</div>
 			<?php } ?>
 			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk -->
-				<div class="new-talk">
+				<div class="new-talk" role="dialog">
 					<?php $this->html( 'newtalk' ); ?>
 				</div>
 			<?php } ?>
