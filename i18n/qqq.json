@@ -1,7 +1,7 @@
 {
-        "@metadata": {
-                "authors": [ ]
-        },
-        "skinname-material": "This is the name of the MediaWiki skin, Material",
-        "material-desc": "This is the description of the the Material skin"
+	"@metadata": {
+		"authors": [ ]
+	},
+	"skinname-material": "This is the name of the MediaWiki skin, Material",
+	"material-desc": "This is the description of the the Material skin"
 }
