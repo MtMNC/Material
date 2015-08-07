@@ -10,7 +10,7 @@
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
-	die('This skin requires installing MediaWiki. See https://www.mediawiki.org/wiki/Manual:Installation_guide for more information.');
+	die( 'This skin requires installing MediaWiki. See https://www.mediawiki.org/wiki/Manual:Installation_guide for more information.' );
 }
 
 // Skin credits for Special:Version
@@ -21,6 +21,7 @@ $wgExtensionCredits['skin'][] = array(
 	'author' => '[https://meta.brickimedia.org/wiki/User:Codyn329 Codyn329]',
 	'descriptionmsg' => 'material-desc',
 	'license' => 'GPL-3.0',
+	'url' => 'https://www.mediawiki.org/wiki/Skin:Material'
 );
 
 $wgValidSkinNames['material'] = 'Material';
@@ -28,9 +29,14 @@ $wgAutoloadClasses['SkinMaterial'] = __DIR__ . '/Material.skin.php';
 $wgMessageDirs['SkinMaterial'] = __DIR__ . '/i18n';
 
 $wgResourceModules['skins.material'] = array(
-	'scripts' => 'skins/Material/material/main.js',
 	'styles' => array(
 		'skins/Material/material/main.css' => array( 'media' => 'screen' ),
 		'skins/Material/material/print.css' => array( 'media' => 'print' ),
 	),
+	'position' => 'top'
+);
+
+$wgResourceModules['skins.material.js'] = array(
+	'scripts' => 'skins/Material/material/main.js',
+	'position' => 'bottom'
 );

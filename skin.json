@@ -1,0 +1,48 @@
+{
+	"name": "Material",
+	"namemsg": "skinname-material",
+	"version": "1.0",
+	"author": [
+		"[https://meta.brickimedia.org/wiki/User:Codyn329 Codyn329]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Skin:Material",
+	"descriptionmsg": "material-desc",
+	"license-name": "GPL-3.0+",
+	"type": "skin",
+	"ValidSkinNames": {
+		"material": "Material"
+	},
+	"MessagesDirs": {
+		"SkinMaterial": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SkinMaterial": "Material.skin.php",
+		"MaterialTemplate": "Material.skin.php"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Material"
+	},
+	"ResourceModules": {
+		"skins.material": {
+			"styles": {
+				"material/print.css": {
+					"media": "print"
+				},
+				"material/main.css": {
+					"media": "screen"
+				}
+			},
+			"position": "top"
+		},
+		"skins.material.js": {
+			"scripts": [
+				"material/main.js"
+			],
+			"position": "bottom"
+		}
+	},
+	"manifest_version": 1
+}

@@ -32,6 +32,8 @@ class SkinMaterial extends SkinTemplate {
 // BaseTemplate class
 class MaterialTemplate extends BaseTemplate {
 	public function execute() {
+		global $wgVersion;
+
 		$this->html( 'headelement' );
 		?>
 		<header id="mw-header"> <!-- header -->
@@ -68,7 +70,7 @@ class MaterialTemplate extends BaseTemplate {
 					<?php // page status indicators
 						$oldVersion = version_compare( $wgVersion, '1.25', '<=' );
 						if ( $oldVersion ) {
-							if ( method_exists( $this, 'getIndicators' ) {
+							if ( method_exists( $this, 'getIndicators' ) ) {
 								echo $this->getIndicators();
 							}
 						}
