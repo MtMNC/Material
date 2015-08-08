@@ -43,7 +43,7 @@ class MaterialTemplate extends BaseTemplate {
 			<form class="mw-search" id="searchform" role="search" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
-					echo $this->makeSearchInput( array( 'class' => 'mw-search-input' ) );
+					echo $this->makeSearchInput( array( 'class' => 'mw-search-input', 'placeholder' => 'Search the Wiki' ) );
 					echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
 				?>
 			</form>
@@ -107,11 +107,13 @@ class MaterialTemplate extends BaseTemplate {
 		</div>
 		<footer id="mw-footer"> <!-- footer -->
 			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
-				<ul>
-				<?php foreach ( $links as $key ) { ?>
-					<li><?php $this->html( $key ) ?></li>
-				<?php } ?>
-				</ul>
+				<nav id="nav-footer" role="navigation">
+					<ul>
+					<?php foreach ( $links as $key ) { ?>
+						<li><?php $this->html( $key ) ?></li>
+					<?php } ?>
+					</ul>
+				</nav>
 			<?php } ?>
 		</footer>
 		<?php
