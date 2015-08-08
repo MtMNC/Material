@@ -67,7 +67,7 @@ class MaterialTemplate extends BaseTemplate {
 				</ul>
 			</nav>
 		</header>
-		<div class="mw-body-content">
+		<div class="mw-body-content" role="main">
 			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice -->
 				<div id="site-notice" role="banner">
 					<?php $this->html( 'sitenotice' ); ?>
