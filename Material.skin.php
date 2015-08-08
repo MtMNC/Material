@@ -40,6 +40,9 @@ class MaterialTemplate extends BaseTemplate {
 			<nav id="nav-menu" role="navigation">
 				
 			</nav>
+			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ); ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'mw-logo-link' ) ) ?>> <!-- logo link -->
+				<img id="mw-logo-image" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
+			</a>
 			<form class="mw-search" id="searchform" role="search" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
