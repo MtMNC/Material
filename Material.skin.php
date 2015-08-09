@@ -43,7 +43,7 @@ class MaterialTemplate extends BaseTemplate {
 					<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"<?php echo Linker::tooltip( $box['id'] ) ?>>
 					<?php
 						if ( is_array( $box['content'] ) ) { 
-						echo "<ul">;
+						echo "<ul>";
 							foreach ( $box['content'] as $key => $item ) {
 								echo $this->makeListItem( $key, $item );
 							}
@@ -73,7 +73,7 @@ class MaterialTemplate extends BaseTemplate {
 				}
 			?>
 			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
-				<span class="username"><?php echo $this->getName() ?></span>
+				<span class="username"><?php echo $this->$wgUser->getName() ?></span>
 				<ul>
 					<?php
 						foreach ( $this->getPersonalTools() as $key => $item ) {
