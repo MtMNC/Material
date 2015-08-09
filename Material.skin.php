@@ -36,14 +36,14 @@ class MaterialTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
-		<header id="mw-header"> <!-- header -->
+		<header id="mw-header" role="group"> <!-- header -->
 			<nav id="nav-menu" role="navigation">
 				
 			</nav>
 			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ); ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'mw-logo-link' ) ) ?>> <!-- logo link -->
-				<img id="mw-logo-image" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
+				<img id="mw-logo-image" role="banner" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
 			</a>
-			<form class="mw-search" id="searchform" role="search" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
+			<form class="mw-search" role="search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
 					echo $this->makeSearchInput( array( 'class' => 'mw-search-input', 'placeholder' => 'Search the Wiki' ) );
@@ -52,7 +52,7 @@ class MaterialTemplate extends BaseTemplate {
 			</form>
 			<?php // language links
 				if ( $this->data['language_urls'] ) {
-					echo '<ul>';
+					echo '<ul id="mw-language-links" role="menu">';
 					foreach ( $this->data['language_urls'] as $key => $langLink ) {
 						echo $this->makeListItem( $key, $langLink );
 					}
@@ -108,7 +108,7 @@ class MaterialTemplate extends BaseTemplate {
 				}
 			?>
 		</div>
-		<footer id="mw-footer"> <!-- footer -->
+		<footer id="mw-footer" role="contentinfo"> <!-- footer -->
 			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
 				<nav id="nav-footer" role="navigation">
 					<ul>
