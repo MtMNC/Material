@@ -38,7 +38,20 @@ class MaterialTemplate extends BaseTemplate {
 		?>
 		<header id="mw-header" role="group"> <!-- header -->
 			<nav id="nav-menu" role="navigation">
-				
+				<span class="menu" aria-label="menu button"><!-- some icon for a menu --></span>
+				<?php foreach ( $this->getSidebar() as $boxName => $box ) { ?>
+					<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"<?php echo Linker::tooltip( $box['id'] ) ?>>
+					<?php
+						if ( is_array( $box['content'] ) ) { 
+						echo "<ul">;
+							foreach ( $box['content'] as $key => $item ) {
+								echo $this->makeListItem( $key, $item );
+							}
+						echo "</ul>";
+						} else {
+							echo $box['content'];
+						}
+					} ?>
 			</nav>
 			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ); ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'mw-logo-link' ) ) ?>> <!-- logo link -->
 				<img id="mw-logo-image" role="banner" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
