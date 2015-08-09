@@ -72,12 +72,12 @@ class MaterialTemplate extends BaseTemplate {
 		</header>
 		<div class="mw-body-content" role="main">
 			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice -->
-				<div id="site-notice" role="banner">
+				<div id="site-notice" role="alert" aria-live="polite">
 					<?php $this->html( 'sitenotice' ); ?>
 				</div>
 			<?php } ?>
 			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk -->
-				<div class="new-talk" role="dialog">
+				<div class="new-talk" role="dialog" aria-live="polite">
 					<?php $this->html( 'newtalk' ); ?>
 				</div>
 			<?php } ?>
