@@ -113,6 +113,15 @@ class MaterialTemplate extends BaseTemplate {
 					<?php } ?>
 				</section>
 			<?php } ?>
+			<ul>
+			<?php
+				foreach ( $this->data['content_navigation'] as $category => $tabs ) {
+					foreach ( $tabs as $key => $tab ) {
+						echo $this->makeListItem( $key, $tab );
+					}
+				}
+			?>
+			</ul>
 			<?php $this->html( 'bodytext' ) ?> <!-- content -->
 			<?php
 				$this->html( 'catlinks' );  // categories
