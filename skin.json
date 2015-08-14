@@ -28,10 +28,13 @@
 	"ResourceModules": {
 		"skins.material": {
 			"styles": {
-				"material/print.css": {
+				"material/styles/print.css": {
 					"media": "print"
 				},
-				"material/main.css": {
+				"material/styles/themes.less": {
+					"media": "print"
+				},
+				"material/styles/main.css": {
 					"media": "screen"
 				}
 			},
@@ -39,7 +42,7 @@
 		},
 		"skins.material.js": {
 			"scripts": [
-				"material/main.js"
+				"material/scripts/main.js"
 			],
 			"position": "bottom"
 		}
