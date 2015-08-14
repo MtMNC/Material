@@ -38,6 +38,6 @@ $wgResourceModules['skins.material'] = array(
 );
 
 $wgResourceModules['skins.material.js'] = array(
-	'scripts' => 'skins/Material/material/main.js',
+	'scripts' => 'skins/Material/material/scripts/main.js',
 	'position' => 'bottom'
 );
