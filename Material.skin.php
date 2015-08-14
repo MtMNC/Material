@@ -73,7 +73,7 @@ class MaterialTemplate extends BaseTemplate {
 				}
 			?>
 			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
-				<span class="username"><?php echo $this->$wgUser->getName() ?></span>
+				<span class="username"><?php echo htmlspecialchars($this->getSkin()->getUser()->getName()); ?></span>
 				<ul>
 					<?php
 						foreach ( $this->getPersonalTools() as $key => $item ) {
