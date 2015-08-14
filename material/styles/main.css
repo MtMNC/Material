@@ -50,6 +50,15 @@ body {
 	float: right;
 }
 
+/* headings */
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2.25em; }
+h4 { font-size: 2em; }
+h5 { font-size: 1.75em; }
+h6 { font-size: 1.5em; }
+h3, h4, h5, h6 { font-weight: 400; }
+
 /* body content */
 .mw-body-content {
 	background: #fff;
@@ -70,6 +79,7 @@ body {
 	margin: 1em 0 1em 1em;
 }
 
+/* buttons */
 /* footer */
 #mw-footer {
 	background-color: #455a64;
@@ -88,3 +98,7 @@ body {
 	color: #fff;
 }
 
+/* selection controls */
+/* tabs */
+/* tables */
+/* text fields */
