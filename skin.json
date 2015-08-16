@@ -28,13 +28,13 @@
 	"ResourceModules": {
 		"skins.material": {
 			"styles": {
-				"material/styles/print.css": {
+				"material/styles/print.less": {
 					"media": "print"
 				},
 				"material/styles/themes.less": {
 					"media": "print"
 				},
-				"material/styles/main.css": {
+				"material/styles/main.less": {
 					"media": "screen"
 				}
 			},
