@@ -30,9 +30,9 @@ $wgMessageDirs['SkinMaterial'] = __DIR__ . '/i18n';
 
 $wgResourceModules['skins.material'] = array(
 	'styles' => array(
-		'skins/Material/material/styles/main.css' => array( 'media' => 'screen' ),
+		'skins/Material/material/styles/main.less' => array( 'media' => 'screen' ),
 		'skins/Material/material/styles/themes.less' => array ( 'media' => 'screen' ),
-		'skins/Material/material/styles/print.css' => array( 'media' => 'print' ),
+		'skins/Material/material/styles/print.less' => array( 'media' => 'print' ),
 	),
 	'position' => 'top'
 );
