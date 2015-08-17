@@ -3,5 +3,6 @@
 		"authors": [ "Codyn329" ]
 	},
 	"skinname-material": "Material",
-	"material-desc": "A MediaWiki skin based on Google's Material Design language"
+	"material-desc": "A MediaWiki skin based on Google's Material Design language",
+	"material-guest": "Guest"
 }
