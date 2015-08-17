@@ -60,7 +60,7 @@ class MaterialTemplate extends BaseTemplate {
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
 					echo $this->makeSearchInput( array( 'class' => 'mw-search-input', 'placeholder' => 'Search the Wiki' ) );
-					echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg'), 'alt' => 'search button' ) );
+					echo $this->makeSearchButton( 'image', array( 'src' => $this->getSkin()->getSkinStylePath( 'images/magnifying-glass.svg' ), 'alt' => 'search button' ) );
 				?>
 			</form>
 			<?php // language links
@@ -73,7 +73,17 @@ class MaterialTemplate extends BaseTemplate {
 				}
 			?>
 			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
-				<span class="username"><?php echo htmlspecialchars($this->getSkin()->getUser()->getName()); ?></span>
+				<span class="username-wrapper">
+					<span class="username">
+						<?php //username
+							if( $this->data['loggedin'] ) {
+								echo htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES); 
+							} else {
+								echo $this->getSkin()->msg( 'material-guest' ).text();
+							}
+						?>
+					</span>
+				</span>
 				<ul>
 					<?php
 						foreach ( $this->getPersonalTools() as $key => $item ) {
