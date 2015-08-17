@@ -3,5 +3,6 @@
 		"authors": [ ]
 	},
 	"skinname-material": "This is the name of the MediaWiki skin, Material",
-	"material-desc": "This is the description of the the Material skin"
+	"material-desc": "This is the description of the the Material skin",
+	"material-guest": "This message shows name for users who aren't logged in"
 }
