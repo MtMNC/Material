@@ -1,3 +1,4 @@
+<img src="https://travis-ci.org/codyn329/Material.svg?branch=master" style="float: right;"/>
 # What is 'Material'?
 > A MediaWiki skin based on Google's Material Design language
 
