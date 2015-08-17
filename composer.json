@@ -1,0 +1,31 @@
+{
+	"name": "mediawiki/material-skin",
+	"type": "mediawiki-skin",
+	"description": "A MediaWiki skin based on Google's Material Design language",
+	"keywords": [
+		"wiki",
+		"MediaWiki",
+		"skin"
+	],
+	"homepage": "https://www.mediawiki.org/wiki/Skin:Material",
+	"license": "GPL-3.0+",
+	"authors": [
+	{
+		"name": "Codyn329"
+	}
+	],
+	"support": {
+		"wiki": "https://www.mediawiki.org/wiki/Skin:Material",
+		"forum": "https://www.mediawiki.org/wiki/Skin_talk:Material",
+		"source": "https://github.com/codyn329/Material.git",
+		"issues": "https://github.com/codyn329/Material/issues",
+	  },
+	"require": {
+		"php": ">=5.3.0",
+	},
+	"autoload": {
+		"files": [
+			"Material.php"
+		]
+	}
+}
