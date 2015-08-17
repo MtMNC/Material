@@ -18,7 +18,7 @@
 		"wiki": "https://www.mediawiki.org/wiki/Skin:Material",
 		"forum": "https://www.mediawiki.org/wiki/Skin_talk:Material",
 		"source": "https://github.com/codyn329/Material.git",
-		"issues": "https://github.com/codyn329/Material/issues",
+		"issues": "https://github.com/codyn329/Material/issues"
 	  },
 	"require": {
 		"php": ">=5.3.0",
