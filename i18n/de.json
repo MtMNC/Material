@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [ "George Barnick" ]
+	},
+	"skinname-material": "Material",
+	"material-desc": "Ein MediaWiki Skin auf der Basis von Google Material Designsprache",
+	"material-guest": "Gast"
+}
