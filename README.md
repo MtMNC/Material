@@ -19,7 +19,3 @@ As it's continuously being developed, we keep in mind seven important factors li
  * ```wfLoadSkin( 'Material' );``` (for MW v1.25 or newer)
 3. You can now verify that the skin is installed by checking Special:Version!
 
-# How to contribute
-As an open-source project, contributions are not only allowed but *encouraged* :D! If you'd like to learn how to help improve this MediaWiki skin, here are some things on what you could do:
-* **Submit an issue ticket** - Issues are located at [codyn329/Material/issues](https://github.com/codyn329/Material/issues). The issue you submit can revolve around a new feature, optimizing performance, more efficient code, whatever! As long as its relevant to the project scope, issues are welcomed. Keep in mind to provide constructive feedback and be polite :)
-* **Make a commit to a file** - Make sure you add a description and a title summary on what you're intending to do so other users can understand. 
