@@ -32,7 +32,7 @@
 					"media": "print"
 				},
 				"material/styles/themes.less": {
-					"media": "print"
+					"media": "screen"
 				},
 				"material/styles/main.less": {
 					"media": "screen"
