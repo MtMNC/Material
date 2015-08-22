@@ -74,15 +74,32 @@ class MaterialTemplate extends BaseTemplate {
 			?>
 			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
 				<span class="username-wrapper">
-					<span class="username">
-						<?php //username
-							if( $this->data['loggedin'] ) {
-								echo htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES); 
-							} else {
-								echo $this->getSkin()->msg( 'material-guest' ).text();
-							}
-						?>
-					</span>
+					<?php 
+					$materialUsername = echo htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES);
+					$materialGuest = echo $this->getSkin()->msg( 'material-guest' ).text();
+					$materialSPAvatar =  new wAvatar( $user->getId(), 'l' )->getAvatarURL( array( 'height' => ' 40px', 'class' => 'avatar-img' ) );
+					$materialSP
+						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T ?>
+							<span class="avatar"><?php echo $materialSPAvatar ?></span>
+							<span class="username"><?php echo $materialUsername ?></span>
+						<?php 
+						} elseif ( class_exists( 'wAvatar' ) && !$this->data['loggedin'] ) { //socialProfile:T and logged in:F  
+							?> 
+							<span class="avatar"><i class="material-icons">avatar circle</i></span>
+							<span class="username"><?php echo $materialGuest ?></span>
+						<?php 
+						} elseif ( !class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:F and logged in:T 
+							?>
+							<span class="avatar"><i class="material-icons">avatar circle</i></span>
+							<span class="username"><?php echo $materialUsername ?></span>
+						<?php 
+						} elseif ( !class_exists( 'wAvatar' ) && !$this->data['loggedin'] ) { //socialProfile:F and logged in:F
+							?>
+							<span class="avatar"><i class="material-icons">avatar circle</i></span>
+							<span class="username"><?php echo $materialGuest ?></span>
+						<?php 
+						} 
+					?>
 				</span>
 				<ul>
 					<?php
@@ -121,17 +138,18 @@ class MaterialTemplate extends BaseTemplate {
 							<?php $this->html( 'subtitle' ); $this->html( 'undelete' ); ?>
 						</div>
 					<?php } ?>
+					<ul class="content-tabs">
+						<?php
+							foreach ( $this->data['content_navigation'] as $category => $tabs ) {
+								foreach ( $tabs as $key => $tab ) {
+									echo $this->makeListItem( $key, $tab );
+								}
+							}
+						?>
+					</ul>
 				</section>
 			<?php } ?>
-			<ul>
-			<?php
-				foreach ( $this->data['content_navigation'] as $category => $tabs ) {
-					foreach ( $tabs as $key => $tab ) {
-						echo $this->makeListItem( $key, $tab );
-					}
-				}
-			?>
-			</ul>
+			
 			<?php $this->html( 'bodytext' ) ?> <!-- content -->
 			<?php
 				$this->html( 'catlinks' );  // categories
