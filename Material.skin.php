@@ -78,7 +78,7 @@ class MaterialTemplate extends BaseTemplate {
 					$materialUsername = echo htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES);
 					$materialGuest = echo $this->getSkin()->msg( 'material-guest' ).text();
 					$materialSPAvatar =  new wAvatar( $user->getId(), 'l' )->getAvatarURL( array( 'height' => ' 40px', 'class' => 'avatar-img' ) );
-					$materialSP
+					
 						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T ?>
 							<span class="avatar"><?php echo $materialSPAvatar ?></span>
 							<span class="username"><?php echo $materialUsername ?></span>
