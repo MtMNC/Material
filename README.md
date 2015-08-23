@@ -21,8 +21,8 @@ As it's continuously being developed, we keep in mind seven important factors li
 
 # Custom JS and CSS on the Wiki
 This is a list for the pages so you can use custom CSS and/or JS for your site.
-* Personal CSS is located at ```Special:Mypage/material.css```
-* Personal JS is located at ```Special:Mypage/material.js```
+* Personal CSS is located at ```Special:Mypage/material.css``` / ```User:<username>/material.css```
+* Personal JS is located at ```Special:Mypage/material.js``` / ```User:<username>/material.js```
 * Wiki CSS is located at ```MediaWiki:Material.css```
 * Wiki JS is located at ```MediaWiki:Material.js```
 
