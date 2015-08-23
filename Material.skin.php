@@ -40,7 +40,7 @@ class MaterialTemplate extends BaseTemplate {
 			<nav id="nav-menu" role="navigation">
 				<span class="menu" aria-label="menu button"><!-- some icon for a menu --></span>
 				<?php foreach ( $this->getSidebar() as $boxName => $box ) { ?>
-					<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"<?php echo Linker::tooltip( $box['id'] ) ?>>
+					<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>" <?php echo Linker::tooltip( $box['id'] ) ?>>
 					<?php
 						if ( is_array( $box['content'] ) ) { 
 						echo "<ul>";
@@ -52,6 +52,7 @@ class MaterialTemplate extends BaseTemplate {
 							echo $box['content'];
 						}
 					} ?>
+					</div>
 			</nav>
 			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ); ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'mw-logo-link' ) ) ?>> <!-- logo link -->
 				<img id="mw-logo-image" role="banner" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
@@ -79,7 +80,8 @@ class MaterialTemplate extends BaseTemplate {
 					$materialGuest = echo $this->getSkin()->msg( 'material-guest' ).text();
 					$materialSPAvatar =  new wAvatar( $user->getId(), 'l' )->getAvatarURL( array( 'height' => ' 40px', 'class' => 'avatar-img' ) );
 					
-						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T ?>
+						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T 
+							?>
 							<span class="avatar"><?php echo $materialSPAvatar ?></span>
 							<span class="username"><?php echo $materialUsername ?></span>
 						<?php 
