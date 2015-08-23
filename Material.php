@@ -10,7 +10,7 @@
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This skin requires installing MediaWiki. See https://www.mediawiki.org/wiki/Manual:Installation_guide for more information.' );
+	die( 'This skin requires installing MediaWiki (version 1.23.1 or above). See https://www.mediawiki.org/wiki/Manual:Installation_guide for more information.' );
 }
 
 // Skin credits for Special:Version
@@ -28,6 +28,7 @@ $wgValidSkinNames['material'] = 'Material';
 $wgAutoloadClasses['SkinMaterial'] = __DIR__ . '/Material.skin.php';
 $wgMessageDirs['SkinMaterial'] = __DIR__ . '/i18n';
 
+//CSS stylesheets
 $wgResourceModules['skins.material'] = array(
 	'styles' => array(
 		'skins/Material/material/styles/main.less' => array( 'media' => 'screen' ),
@@ -36,7 +37,7 @@ $wgResourceModules['skins.material'] = array(
 	),
 	'position' => 'top'
 );
-
+//JavaScript scripts
 $wgResourceModules['skins.material.js'] = array(
 	'scripts' => 'skins/Material/material/scripts/main.js',
 	'position' => 'bottom'
