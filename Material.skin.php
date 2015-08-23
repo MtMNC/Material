@@ -76,11 +76,12 @@ class MaterialTemplate extends BaseTemplate {
 			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
 				<span class="username-wrapper">
 					<?php 
-						$materialUsername = echo htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES);
-						$materialGuest = echo $this->getSkin()->msg( 'material-guest' ).text();
-						$materialSPAvatar =  new wAvatar( $user->getId(), 'l' )->getAvatarURL( array( 'height' => ' 40px', 'class' => 'avatar-img' ) );
+						$materialUsername = htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES);
+						$materialGuest = $this->getSkin()->msg( 'material-guest' ).text();
 					
 						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T 
+							$materialSPAvatar = new wAvatar( $user->getId(), 'l' );
+							$materialSPAvatarImg = $materialSPAvatar->getAvatarURL( array( 'height' => ' 40px', 'class' => 'avatar-img' ) );
 							?>
 							<span class="avatar"><?php echo $materialSPAvatar ?></span>
 							<span class="username"><?php echo $materialUsername ?></span>
