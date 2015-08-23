@@ -36,7 +36,7 @@ class MaterialTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
-		<header id="mw-header" role="group"> <!-- header -->
+		<header id="mw-header" role="group">
 			<nav id="nav-menu" role="navigation">
 				<span class="menu" aria-label="menu button"><!-- some icon for a menu --></span>
 				<?php foreach ( $this->getSidebar() as $boxName => $box ) { ?>
@@ -55,9 +55,9 @@ class MaterialTemplate extends BaseTemplate {
 					</div>
 			</nav>
 			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ); ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'mw-logo-link' ) ) ?>> <!-- logo link -->
-				<img id="mw-logo-image" role="banner" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> <!-- logo image -->
+				<img id="mw-logo-image" role="banner" src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" /> 
 			</a>
-			<form class="mw-search" role="search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>"> <!-- search -->
+			<form class="mw-search" role="search" id="searchform" action="<?php $this->text( 'wgScript' ); ?>">
 				<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 				<?php
 					echo $this->makeSearchInput( array( 'class' => 'mw-search-input', 'placeholder' => 'Search the Wiki' ) );
@@ -73,11 +73,11 @@ class MaterialTemplate extends BaseTemplate {
 					echo '</ul>';
 				}
 			?>
-			<nav id="nav-user" role="navigation"> <!-- user navigation with personal tools -->
+			<nav id="nav-user" role="navigation"> 
 				<span class="username-wrapper">
 					<?php 
 						$materialUsername = htmlspecialchars($this->getSkin()->getUser()->getName(), ENT_QUOTES);
-						$materialGuest = $this->getSkin()->msg( 'material-guest' ).text();
+						$materialGuest = $this->getSkin()->msg( 'material-guest' )->text();
 					
 						if ( class_exists( 'wAvatar' ) && $this->data['loggedin'] ) { //socialProfile:T and logged in:T 
 							$materialSPAvatar = new wAvatar( $user->getId(), 'l' );
@@ -114,17 +114,17 @@ class MaterialTemplate extends BaseTemplate {
 			</nav>
 		</header>
 		<div class="mw-body-content" role="main">
-			<?php if ( $this->data['sitenotice'] ) { ?> <!-- site notice -->
+			<?php if ( $this->data['sitenotice'] ) { ?>
 				<div id="site-notice" role="alert" aria-live="polite">
 					<?php $this->html( 'sitenotice' ); ?>
 				</div>
 			<?php } ?>
-			<?php if ( $this->data['newtalk'] ) { ?> <!-- new talk -->
+			<?php if ( $this->data['newtalk'] ) { ?> 
 				<div class="new-talk" role="dialog" aria-live="polite">
 					<?php $this->html( 'newtalk' ); ?>
 				</div>
 			<?php } ?>
-			<?php if ( $this->data['title'] != '' ) { ?> <!-- title section -->
+			<?php if ( $this->data['title'] != '' ) { ?>
 				<section id="title-section">
 					<?php // page status indicators
 						$oldVersion = version_compare( $wgVersion, '1.25', '<=' );
@@ -134,9 +134,9 @@ class MaterialTemplate extends BaseTemplate {
 							}
 						}
 					?>
-					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> <!-- article heading -->
-					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> <!-- tagline -->
-					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> <!-- subtitles -->
+					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> 
+					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> 
+					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> 
 						<div id="content-sub">
 							<?php $this->html( 'subtitle' ); $this->html( 'undelete' ); ?>
 						</div>
@@ -153,15 +153,15 @@ class MaterialTemplate extends BaseTemplate {
 				</section>
 			<?php } ?>
 			
-			<?php $this->html( 'bodytext' ) ?> <!-- content -->
+			<?php $this->html( 'bodytext' ) ?>
 			<?php
-				$this->html( 'catlinks' );  // categories
-				if ( $this->data['dataAfterContent'] ) { // dataAfterContent
+				$this->html( 'catlinks' ); 
+				if ( $this->data['dataAfterContent'] ) { 
 					$this->html( 'dataAfterContent' );
 				}
 			?>
 		</div>
-		<footer id="mw-footer" role="contentinfo"> <!-- footer -->
+		<footer id="mw-footer" role="contentinfo"> 
 			<?php foreach ( $this->getFooterLinks() as $category => $links ) { ?>
 				<nav id="nav-footer" role="navigation">
 					<ul>
