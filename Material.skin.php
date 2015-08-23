@@ -135,7 +135,12 @@ class MaterialTemplate extends BaseTemplate {
 						}
 					?>
 					<h1 class="first-heading"><?php $this->html( 'title' ); ?></h1> 
-					<div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> 
+					<?php
+						if( isset( $_GET["printable"] ) && trim( $_GET["printable"] ) === 'yes' ){
+							echo ?><div id="site-sub"><?php $this->msg( 'tagline' ); ?></div> 
+						<?php
+						}
+					?>
 					<?php if ( $this->data['subtitle'] || $this->data['undelete'] ) { ?> 
 						<div id="content-sub">
 							<?php $this->html( 'subtitle' ); $this->html( 'undelete' ); ?>
