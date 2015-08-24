@@ -1,4 +1,4 @@
-/* red, pink, purple, indigo, blue, green, yellow, orange, brown, grey */
+// color palette for red, pink, purple, indigo, blue, green, yellow, orange, brown, grey 
 @md-red-a0: #ffebee; @md-pink-a0: #fce4ec; @md-purple-a0: #f3e5f5; @md-indigo-a0: #e8eaf6; @md-blue-a0: #e3f2fd; @md-green-a0: #e8f5e9; @md-yellow-a0: #fffde7; @md-orange-a0: #fff3e0; @md-brown-a0: #efebe9; @md-grey-a0: #fafafa;
 @md-red-a1: #ffcdd2; @md-pink-a1: #f8bbd0; @md-purple-a1: #e1bee7; @md-indigo-a1: #c5cae9; @md-blue-a1: #bbdefb; @md-green-a1: #c8e6c9; @md-yellow-a1: #fff9c4; @md-orange-a1: #ffe0b2; @md-brown-a1: #d7ccc8; @md-grey-a1: #f5f5f5;
 @md-red-a2: #ef9a9a; @md-pink-a2: #f48fb1; @md-purple-a2: #ce93d8; @md-indigo-a2: #9fa8da; @md-blue-a2: #90caf9; @md-green-a2: #a5d6a7; @md-yellow-a2: #fff59d; @md-orange-a2: #ffcc80; @md-brown-a2: #bcaaa4; @md-grey-a2: #eeeeee;
@@ -9,3 +9,54 @@
 @md-red-a7: #d32f2f; @md-pink-a7: #c2185b; @md-purple-a7: #7b1fa2; @md-indigo-a7: #303f9f; @md-blue-a7: #1976d2; @md-green-a7: #388e3c; @md-yellow-a7: #fBc02d; @md-orange-a7: #f57c00; @md-brown-a7: #5d4037; @md-grey-a7: #616161;
 @md-red-a8: #c62828; @md-pink-a8: #ad1457; @md-purple-a8: #6a1b9a; @md-indigo-a8: #283593; @md-blue-a8: #1565c0; @md-green-a8: #2e7d32; @md-yellow-a8: #f9a825; @md-orange-a8: #ef6c00; @md-brown-a8: #4e342e; @md-grey-a8: #424242;
 @md-red-a9: #b71c1c; @md-pink-a9: #880e4f; @md-purple-a9: #4a148c; @md-indigo-a9: #1a237e; @md-blue-a9: #0d47a1; @md-green-a9: #1b5e20; @md-yellow-a9: #f57f17; @md-orange-a9: #e65100; @md-brown-a9: #3e2723; @md-grey-a9: #212121;
+
+// black and white
+@md-black: rgb(0, 0, 0);
+@md-white: rgb(255, 255, 255);
+
+// dark text ( prefix: -txt-dark- )
+@md-txt-dark-primary: lighten(@md-black, 0.87);
+@md-txt-dark-secondary: lighten(@md-black, 0.54); 
+@md-txt-dark-disabled: lighten(@md-black, 0.26);
+
+// light text ( prefix: -txt-light- )
+@md-txt-light-primary: lighten(@md-white, 0);
+@md-txt-light-secondary: lighten(@md-white, 0.7);
+@md-txt-light-disabled: lighten(@md-white, 0.3);
+
+// font size ( prefix: -fs- )
+@md-fs-display4: 112;
+@md-fs-display3: 56;
+@md-fs-display2: 45;
+@md-fs-display1: 34;
+@md-fs-headline: 24;
+@md-fs-title: 21;
+@md-fs-subhead-mobile: 17;
+@md-fs-subhead-desktop: 16;
+@md-fs-body2-mobile: 15;
+@md-fs-body2-desktop: 14;
+@md-fs-body1-mobile: 15;
+@md-fs-body1-desktop: 14;
+@md-fs-caption: 13;
+@md-fs-button: 15;
+
+// font weight ( prefix: -fw- )
+@md-fw-light: 300; //light
+@md-fw-normal: 400; //normal
+@md-fw-medium: 500; //medium
+@md-fw-bold: 700; //bold
+
+@md-fw-display4: @md-fw-light;
+@md-fw-display3: @md-fw-normal;
+@md-fw-display2: @md-fw-normal;
+@md-fw-display1: @md-fw-normal;
+@md-fw-headline: @md-fw-normal;
+@md-fw-title: @md-fw-medium;
+@md-fw-subhead-mobile: @md-fw-regular;
+@md-fw-subhead-desktop: @md-fw-regular;
+@md-fw-body2-mobile: @md-fw-medium;
+@md-fw-body2-desktop: @md-fw-medium;
+@md-fw-body1-mobile: @md-fw-regular;
+@md-fw-body1-desktop: @md-fw-regular;
+@md-fs-caption: @md-fw-regular;
+@md-fs-button: @md-fw-medium;
