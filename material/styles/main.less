@@ -1,3 +1,5 @@
+@import "variables.less";
+
 body {
 	background: #e5e5e5;
 	font-family: 'Roboto', sans-serif;
@@ -12,6 +14,7 @@ body {
 	width: 100%;
 	top: 0;
 	position: fixed;
+	z-index: 1;
 }
 
 #mw-header ul li {
@@ -50,6 +53,58 @@ body {
 	float: right;
 }
 
+/* sidebar */
+#nav-menu {
+	float: left;
+	width: 12em;
+	padding: 1em 0 .25em 0;
+	z-index: 0;
+}
+
+#nav-menu .sidebar-group {
+	border-top: 1px solid @md-grey-r3;
+	padding-top: 1em;
+	margin: 0 .25em;
+	font-size: .75em;
+}
+
+#nav-menu .sidebar-group:first-of-type {
+	border-top: 0;
+	padding-top: 0;
+}
+
+#nav-menu .sidebar-header {
+	color: @md-grey-r5;
+	text-transform: uppercase;
+	margin-left: .5em;
+}
+
+#nav-menu ul {
+	list-style-type: none;
+	margin: 0;
+	margin-left: .25em;
+}
+
+#nav-menu ul li {
+	margin: .25em;
+}
+
+#nav-menu ul li a {
+	display: inline-block;
+	width: 12em;
+	padding: .5em;
+	padding-left: 1.25em;
+	color: @md-grey-r6;
+}
+
+#nav-menu ul li a:hover,
+#nav-menu ul li a:active,
+#nav-menu ul li a:focus, {
+	text-decoration: none;
+	background-color: @md-grey-r3;
+	color: @md-blue-r6;
+}
+
 /* headings */
 h1 { font-size: 3em; }
 h2 { font-size: 2.5em; }
@@ -59,20 +114,42 @@ h5 { font-size: 1.75em; }
 h6 { font-size: 1.5em; }
 h3, h4, h5, h6 { font-weight: 400; }
 
-/* body content */
-.mw-body-content {
-	background: #fff;
+.md-tile {
+	background: @md-grey-r1;
 	border-radius: 2px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-	margin: 100px 50px 30px 50px;
-	padding: 20px;
+	margin-top: 1em;
+	margin-right: 1em;
+	margin-left: 12em;
+	padding: .5em;
+	padding-left: 1em;
+}
 
+.md-tile:first-of-type {
+	margin-top: 80px;
+}
+
+/* site notice */
+#localNotice {
+	margin: 0;
+}
+
+/* new talk alert (not applicable if Echo is installed) */
+.new-talk {
+	background-color: @md-yellow-r0;
+}
+
+/* body content */
+.mw-body-content {
+	background: @md-grey-r1;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 
 .first-heading {
 	font-size: 3em;
 	margin: 0;
-	padding-bottom: 0;
+	padding: 0;
 }
 
 #site-sub {
@@ -80,7 +157,7 @@ h3, h4, h5, h6 { font-weight: 400; }
 }
 
 /* buttons */
-input[type="submit"], 
+input[type="submit"],
 input[type="button"] {
 	background: #2196f3;
 	border: 0;
