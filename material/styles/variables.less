@@ -1,3 +1,13 @@
+/*
+	VARIABLE SYNTAX KEY
+	* color palette: 
+	 - regular color: -[colorname]-r[#]
+	 - accent color: -[colorname]-a[#]
+	* text contrast: -txt-[contrast]-[level] ()
+	* typography: -font-[fontname]
+	* font size: -fs-[element]
+	* font weight: -fw-[level/element]
+*/
 // red
 @md-red-r0: #ffebee; 
 @md-red-r1: #ffcdd2; 
@@ -58,6 +68,18 @@
 @md-blue-r8: #1565c0;
 @md-blue-r9: #0d47a1;
 
+// teal
+@md-teal-r0: #e0f2f1;
+@md-teal-r1: #b2dfdb;
+@md-teal-r2: #80cbc4;
+@md-teal-r3: #4db6ac;
+@md-teal-r4: #26a69a;
+@md-teal-r5: #009688;
+@md-teal-r6: #00897b;
+@md-teal-r7: #00796b;
+@md-teal-r8: #00695c;
+@md-teal-r9: #004d40;
+
 // green
 @md-green-r0: #e8f5e9;
 @md-green-r1: #c8e6c9;
@@ -83,16 +105,16 @@
 @md-yellow-r9: #f57f17;
 
 // amber
-@md-amber-a0: #fff8e1;
-@md-amber-a1: #ffecb3;
-@md-amber-a2: #ffe082;
-@md-amber-a3: #ffd54f;
-@md-amber-a4: #ffca28;
-@md-amber-a5: #ffc107;
-@md-amber-a6: #ffb300;
-@md-amber-a7: #ffa000;
-@md-amber-a8: #ff8f00;
-@md-amber-a9: #ff6f00;
+@md-amber-r0: #fff8e1;
+@md-amber-r1: #ffecb3;
+@md-amber-r2: #ffe082;
+@md-amber-r3: #ffd54f;
+@md-amber-r4: #ffca28;
+@md-amber-r5: #ffc107;
+@md-amber-r6: #ffb300;
+@md-amber-r7: #ffa000;
+@md-amber-r8: #ff8f00;
+@md-amber-r9: #ff6f00;
 
 // orange
 @md-orange-r0: #fff3e0;
@@ -131,20 +153,23 @@
 @md-grey-r9: #212121;
 
 // black and white
-@md-black: rgb(0, 0, 0);
-@md-white: rgb(255, 255, 255);
+@md-black: #000;
+@md-white: #fff;
 
-// dark text ( prefix: -txt-dark- )
+// dark text ( syntax: -txt-dark-[level] )
 @md-txt-dark-primary: lighten(@md-black, 0.87);
 @md-txt-dark-secondary: lighten(@md-black, 0.54); 
 @md-txt-dark-disabled: lighten(@md-black, 0.26);
 
-// light text ( prefix: -txt-light- )
+// light text ( syntax: -txt-light-[level] )
 @md-txt-light-primary: lighten(@md-white, 0);
 @md-txt-light-secondary: lighten(@md-white, 0.7);
 @md-txt-light-disabled: lighten(@md-white, 0.3);
 
-// font size ( prefix: -fs- )
+// typography ( syntax: -font-[font name] )
+@md-font-roboto: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+// font size ( syntax: -fs-[element] )
 @md-fs-display4: 112;
 @md-fs-display3: 56;
 @md-fs-display2: 45;
@@ -160,7 +185,7 @@
 @md-fs-caption: 13;
 @md-fs-button: 15;
 
-// font weight ( prefix: -fw- )
+// font weight ( prefix: -fw-[level/element] )
 @md-fw-light: 300; //light
 @md-fw-normal: 400; //normal
 @md-fw-medium: 500; //medium
